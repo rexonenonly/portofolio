@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "../utils/animations";
 import type { ReactNode } from "react";
-import { useRef } from "react";
 
 interface Props {
   id: string;
@@ -12,9 +11,6 @@ interface Props {
 }
 
 export default function Section({ id, title, subtitle, children, className = "" }: Props) {
-  const c = useRef(0);
-  c.current++;
-  console.log(`[debug] Section#${id} render #${c.current}`);
   return (
     <section
       id={id}

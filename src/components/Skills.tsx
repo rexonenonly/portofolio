@@ -33,7 +33,7 @@ export default function Skills() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
               custom={i * 0.3}
-              className="bg-white rounded-2xl p-6 border border-zinc-200 shadow-sm hover:border-black hover:shadow-md transition-all duration-300 group"
+              className="bg-white rounded-2xl p-6 border border-zinc-200 shadow-sm hover:border-black hover:shadow-md transition-[border-color,box-shadow] duration-300 group"
             >
               {/* Category header */}
               <div className="flex items-center gap-3 mb-4">

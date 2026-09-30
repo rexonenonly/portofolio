@@ -15,7 +15,7 @@ export default function Education() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           custom={0}
-          className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200 shadow-sm hover:border-black hover:shadow-md transition-all duration-300 group"
+          className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200 shadow-sm hover:border-black hover:shadow-md transition-[border-color,box-shadow] duration-300 group"
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 text-zinc-900 group-hover:bg-black group-hover:text-white transition-all">
@@ -59,7 +59,7 @@ export default function Education() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           custom={0.4}
-          className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200 shadow-sm hover:border-black hover:shadow-md transition-all duration-300 group flex flex-col justify-between"
+          className="bg-white rounded-2xl p-6 md:p-8 border border-zinc-200 shadow-sm hover:border-black hover:shadow-md transition-[border-color,box-shadow] duration-300 group flex flex-col justify-between"
         >
           <div>
             <div className="flex items-center gap-3 mb-6">

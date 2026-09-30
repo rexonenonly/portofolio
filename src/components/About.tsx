@@ -106,7 +106,7 @@ export default function About() {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
                     custom={1.5 + i * 0.4}
-                    className="bg-white rounded-xl p-3.5 text-center border border-zinc-200 shadow-sm hover:border-black hover:shadow-md transition-all duration-300 group cursor-default"
+                    className="bg-white rounded-xl p-3.5 text-center border border-zinc-200 shadow-sm hover:border-black hover:shadow-md transition-[border-color,box-shadow] duration-300 group cursor-default"
                   >
                     <div className="mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-100 text-zinc-800 group-hover:bg-black group-hover:text-white transition-all">
                       <Icon size={18} />

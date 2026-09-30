@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, ChevronDown } from "lucide-react";
 import { personalInfo } from "../data/data";
 import { fadeUp } from "../utils/animations";
-import { useRef } from "react";
 
 /* Brand icons not in lucide-react — lightweight inline SVGs */
 const GithubIcon = ({ size = 18 }: { size?: number }) => (
