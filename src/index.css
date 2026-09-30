@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+/* ─── Tailwind v4 Theme: White Background & Black Monochrome ───────────────── */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Accent: Deep Blacks & Sleek Charcoals */
+  --color-accent-50: #f4f4f5;
+  --color-accent-100: #e4e4e7;
+  --color-accent-200: #d4d4d8;
+  --color-accent-300: #71717a;
+  --color-accent-400: #27272a;
+  --color-accent-500: #09090b;
+  --color-accent-600: #000000;
+  --color-accent-700: #000000;
+
+  /* Monochrome Surface & Text Palette (White Background -> Black Text) */
+  --color-navy-950: #ffffff; /* Main Clean White Background */
+  --color-navy-900: #fafafa; /* Soft off-white surface */
+  --color-navy-800: #f4f4f5; /* Subtle card/pill background */
+  --color-navy-700: #e4e4e7; /* Crisp divider & border */
+  --color-navy-600: #d4d4d8; /* Medium border */
+  --color-navy-500: #71717a; /* Neutral secondary text / captions */
+  --color-navy-400: #52525b; /* Body secondary text */
+  --color-navy-300: #27272a; /* Body strong text */
+  --color-navy-200: #18181b; /* Heading text */
+  --color-navy-100: #09090b; /* Deep black titles */
+  --color-navy-50: #000000;  /* Pitch black */
+}
+
+/* ─── Base Layer ─────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #ffffff;
+    color: #09090b;
+  }
+
+  ::selection {
+    background-color: #09090b;
+    color: #ffffff;
+  }
+
+  /* Custom scrollbar in light mode */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fafafa;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d4d4d8;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #71717a;
+  }
+}
+
+/* ─── Utility classes ────────────────────────────────────── */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #09090b 0%, #27272a 45%, #52525b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .glass-card {
+    background: #ffffff;
+    border: 1px solid #e4e4e7;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+  }
+
+  .glass-card:hover {
+    box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.06), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+  }
+
+  .glow {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.06);
+  }
+
+  .glow-text {
+    text-shadow: none;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+}
