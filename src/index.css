@@ -1,32 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
-/* ─── Tailwind v4 Theme: White Background & Black Monochrome ───────────────── */
+/* ─── Tailwind Theme: High-end Minimalist Editorial (Light Mode) ────────── */
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Accent: Deep Blacks & Sleek Charcoals */
-  --color-accent-50: #f4f4f5;
-  --color-accent-100: #e4e4e7;
-  --color-accent-200: #d4d4d8;
-  --color-accent-300: #71717a;
-  --color-accent-400: #27272a;
-  --color-accent-500: #09090b;
-  --color-accent-600: #000000;
-  --color-accent-700: #000000;
-
-  /* Monochrome Surface & Text Palette (White Background -> Black Text) */
-  --color-navy-950: #ffffff; /* Main Clean White Background */
-  --color-navy-900: #fafafa; /* Soft off-white surface */
-  --color-navy-800: #f4f4f5; /* Subtle card/pill background */
-  --color-navy-700: #e4e4e7; /* Crisp divider & border */
-  --color-navy-600: #d4d4d8; /* Medium border */
-  --color-navy-500: #71717a; /* Neutral secondary text / captions */
-  --color-navy-400: #52525b; /* Body secondary text */
-  --color-navy-300: #27272a; /* Body strong text */
-  --color-navy-200: #18181b; /* Heading text */
-  --color-navy-100: #09090b; /* Deep black titles */
-  --color-navy-50: #000000;  /* Pitch black */
+  /* Monochrome Surface & Text Palette */
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
 }
 
 /* ─── Base Layer ─────────────────────────────────────────── */
@@ -35,71 +26,46 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     font-family: var(--font-sans);
     background-color: #ffffff;
-    color: #09090b;
+    color: #18181b;
+    overflow-x: hidden;
   }
 
   ::selection {
-    background-color: #09090b;
+    background-color: #18181b;
     color: #ffffff;
   }
 
-  /* Custom scrollbar in light mode */
+  /* Sleek minimal scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #fafafa;
+    background: transparent;
   }
   ::-webkit-scrollbar-thumb {
     background: #d4d4d8;
-    border-radius: 4px;
+    border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #71717a;
+    background: #a1a1aa;
   }
 }
 
-/* ─── Utility classes ────────────────────────────────────── */
+/* ─── Minimalist Utility Classes ─────────────────────────── */
 @layer utilities {
-  .text-gradient {
-    background: linear-gradient(135deg, #09090b 0%, #27272a 45%, #52525b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .font-mono {
+    font-family: var(--font-mono);
   }
 
-  .glass {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  .glass-card {
-    background: #ffffff;
-    border: 1px solid #e4e4e7;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
-  }
-
-  .glass-card:hover {
-    box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.06), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
-  }
-
-  .glow {
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.06);
-  }
-
-  .glow-text {
-    text-shadow: none;
-  }
-
-  .dot-grid {
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
-    background-size: 28px 28px;
+  .subtle-grid {
+    background-image: linear-gradient(to right, rgba(24, 24, 27, 0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(24, 24, 27, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 }

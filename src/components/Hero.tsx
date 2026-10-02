@@ -3,7 +3,6 @@ import { Mail, MapPin, ChevronDown } from "lucide-react";
 import { personalInfo } from "../data/data";
 import { fadeUp } from "../utils/animations";
 
-/* Brand icons not in lucide-react — lightweight inline SVGs */
 const GithubIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -20,37 +19,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-16 bg-white"
+      className="relative min-h-screen flex items-center justify-center bg-white"
     >
-      {/* Animated subtle grid background */}
-      <div className="absolute inset-0 dot-grid opacity-60" />
-      <div className="absolute top-1/4 -left-32 h-72 w-72 rounded-full bg-zinc-200/50 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 h-96 w-96 rounded-full bg-zinc-200/40 blur-[120px] pointer-events-none" />
-
-      {/* Floating subtle ambient particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute h-1.5 w-1.5 rounded-full bg-zinc-400/40"
-            style={{
-              top: `${15 + i * 14}%`,
-              left: `${10 + i * 16}%`,
-            }}
-            animate={{
-              y: [0, -25, 0],
-              opacity: [0.2, 0.6, 0.2],
-            }}
-            transition={{
-              duration: 3.5 + i * 0.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.4,
-            }}
-          />
-        ))}
-      </div>
-
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         {/* Status badge */}
         <motion.div
@@ -58,10 +28,10 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-1.5 text-xs font-semibold text-zinc-800 shadow-sm"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-1.5 text-xs font-semibold text-zinc-700"
         >
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-zinc-900 opacity-75" />
+            <span className="absolute inline-flex h-full w-full rounded-full bg-zinc-900 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-zinc-900" />
           </span>
           Open to Opportunities
@@ -73,10 +43,10 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={1}
-          className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-tight text-zinc-900"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight text-zinc-900"
         >
           Hi, I'm{" "}
-          <span className="text-gradient">{personalInfo.name}</span>
+          <span className="text-zinc-800">{personalInfo.name}</span>
         </motion.h1>
 
         {/* Role */}
@@ -85,7 +55,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={2}
-          className="mt-4 text-lg md:text-xl text-zinc-700 font-semibold tracking-wide"
+          className="mt-4 text-lg md:text-xl font-medium text-zinc-600"
         >
           {personalInfo.role}
         </motion.p>
@@ -96,7 +66,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={3}
-          className="mt-3 text-sm md:text-base text-zinc-500 max-w-lg mx-auto leading-relaxed"
+          className="mt-3 text-sm md:text-base text-zinc-500 max-w-lg mx-auto"
         >
           {personalInfo.tagline}
         </motion.p>
@@ -107,9 +77,9 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={3.5}
-          className="mt-4 flex items-center justify-center gap-2 text-xs font-medium text-zinc-500"
+          className="mt-4 flex items-center justify-center gap-2 text-xs text-zinc-500"
         >
-          <MapPin size={14} className="text-zinc-800" />
+          <MapPin size={14} className="text-zinc-600" />
           {personalInfo.location}
         </motion.div>
 
@@ -123,14 +93,14 @@ export default function Hero() {
         >
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-2 rounded-xl bg-black px-6 py-3 text-sm font-semibold text-white shadow-md shadow-black/10 hover:bg-zinc-800 transition-all duration-300 hover:-translate-y-0.5"
+            className="group relative inline-flex items-center gap-2 rounded-lg bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-zinc-800 transition-colors"
           >
             <Mail size={16} />
             Contact Me
           </a>
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-6 py-3 text-sm font-semibold text-zinc-800 hover:border-black hover:bg-zinc-50 transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
+            className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-6 py-3 text-sm font-semibold text-zinc-700 hover:border-zinc-900 hover:bg-zinc-50 transition-colors"
           >
             View Projects
           </a>
@@ -142,19 +112,19 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={5}
-          className="mt-8 flex items-center justify-center gap-3.5"
+          className="mt-8 flex items-center justify-center gap-3"
         >
-          {[
+          {([
             { icon: Mail, href: `mailto:${personalInfo.email}`, label: "Email" },
             { icon: GithubIcon, href: "https://github.com", label: "GitHub" },
             { icon: LinkedinIcon, href: "https://linkedin.com", label: "LinkedIn" },
-          ].map(({ icon: Icon, href, label }) => (
+          ] as const).map(({ icon: Icon, href, label }) => (
             <a
               key={label}
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              className="group flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 hover:border-black hover:text-black hover:bg-zinc-50 shadow-sm transition-all duration-300 hover:-translate-y-0.5"
+              className="group flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 hover:border-zinc-900 hover:text-zinc-900 hover:bg-zinc-50 transition-colors"
               aria-label={label}
             >
               <Icon size={18} />
@@ -169,7 +139,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-zinc-400 hover:text-black transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-zinc-400 hover:text-zinc-900 transition-colors"
         aria-label="Scroll down"
       >
         <motion.div
