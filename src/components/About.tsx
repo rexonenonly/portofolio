@@ -18,7 +18,7 @@ export default function About() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           className="lg:col-span-4 flex flex-col items-center text-center"
         >
           <div className="relative w-40 h-40 mb-4">
@@ -62,7 +62,7 @@ export default function About() {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.15 }}
             className="space-y-4"
           >
             <p className="text-white/65 leading-relaxed text-sm md:text-base">
@@ -84,7 +84,7 @@ export default function About() {
                     variants={fadeUp}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.15 }}
                     custom={i * 0.08}
                     className="glass rounded-xl p-3 text-center transition-colors hover:border-white/25 group cursor-default"
                   >

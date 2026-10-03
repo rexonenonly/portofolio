@@ -20,7 +20,7 @@ export default function Skills() {
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.15 }}
               custom={i * 0.06}
               className="group glass rounded-xl p-6 transition-colors"
             >

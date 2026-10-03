@@ -21,51 +21,30 @@
     background-color: #0a0d13;
     color: #f4f6fa;
     overflow-x: hidden;
+    position: relative;
   }
 
-  /* Ambient liquid depth: desaturated steel/cyan caustics.
-     Subtle chromatic refraction behind glass, not neon. */
+  /* Scrolling base: blobs staggered down the full page height so the
+     glow reaches About→Footer, not just the first viewport. */
   body::before {
     content: "";
-    position: fixed;
+    position: absolute;
     inset: 0;
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(55% 45% at 18% 12%, rgba(56, 118, 205, 0.22), transparent 62%),
-      radial-gradient(48% 42% at 85% 10%, rgba(40, 165, 195, 0.16), transparent 64%),
-      radial-gradient(60% 52% at 80% 88%, rgba(96, 104, 168, 0.16), transparent 66%),
-      radial-gradient(42% 38% at 8% 80%, rgba(45, 92, 122, 0.14), transparent 60%);
-    animation: caustic-drift-bg 70s ease-in-out infinite alternate;
+      radial-gradient(55% 5% at 18% 6%,  rgba(56, 118, 205, 0.22), transparent 65%),
+      radial-gradient(48% 5% at 84% 15%, rgba(40, 165, 195, 0.16), transparent 65%),
+      radial-gradient(60% 6% at 76% 28%, rgba(96, 104, 168, 0.16), transparent 66%),
+      radial-gradient(45% 5% at 12% 41%, rgba(45, 92, 122, 0.14), transparent 62%),
+      radial-gradient(58% 6% at 30% 55%, rgba(56, 118, 205, 0.16), transparent 65%),
+      radial-gradient(50% 5% at 82% 67%, rgba(40, 165, 195, 0.14), transparent 64%),
+      radial-gradient(60% 6% at 20% 79%, rgba(96, 104, 168, 0.15), transparent 66%),
+      radial-gradient(50% 5% at 75% 90%, rgba(45, 92, 122, 0.16), transparent 62%),
+      radial-gradient(55% 5% at 35% 98%, rgba(56, 118, 205, 0.14), transparent 65%);
   }
 
-  /* Animated luminous caustic wash: pure CSS, no JS.
-     The moving layer drifts on a 55s loop and desaturates slightly.
-     Disabled when user prefers reduced motion. */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-      radial-gradient(45% 35% at 25% 18%, rgba(96, 150, 255, 0.16), transparent 55%),
-      radial-gradient(50% 40% at 78% 80%, rgba(64, 190, 220, 0.14), transparent 60%);
-    opacity: 0.85;
-    animation: caustic-drift 55s ease-in-out infinite alternate;
-  }
 
-  @keyframes caustic-drift {
-    0%   { transform: translate3d(-4%, -3%, 0) scale(1.08); filter: blur(42px); }
-    50%  { transform: translate3d(2%, 2%,  0) scale(1.22); filter: blur(58px); }
-    100% { transform: translate3d(5%, -4%, 0)  scale(1.14); filter: blur(48px); }
-  }
-
-  @keyframes caustic-drift-bg {
-    0%   { transform: translate3d(0%, 0%, 0) scale(1); }
-    50%  { transform: translate3d(1.5%, 2%, 0) scale(1.04); }
-    100% { transform: translate3d(-2%, -1.5%, 0) scale(1.02); }
-  }
 
   @keyframes glass-flow {
     0%   { background-position: 0% 20%; }

@@ -21,7 +21,8 @@ export default function Section({ id, title, subtitle, children, className = "" 
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            exit="hidden"
+            viewport={{ once: false, amount: 0.3 }}
             className="mb-16 text-center"
           >
             {subtitle && (

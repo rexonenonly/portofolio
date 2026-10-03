@@ -19,7 +19,7 @@ export default function Contact() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           className="grid gap-4 sm:grid-cols-3"
         >
           {contactChannels.map(({ icon: Icon, label, value, href }) => (
@@ -53,7 +53,7 @@ export default function Contact() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           action={`mailto:${personalInfo.email}`}
           method="POST"
           encType="text/plain"

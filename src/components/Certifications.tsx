@@ -31,7 +31,7 @@ export default function Certifications({ onOpenImage }: CertificationsProps) {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.15 }}
             custom={i * 0.06}
             className="group relative flex flex-col justify-between glass rounded-xl p-5 transition-colors"
           >

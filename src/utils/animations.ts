@@ -10,6 +10,7 @@ export const fadeUp: Variants = {
     y: 0,
     transition: { delay: i * 0.08, duration: 0.8, ease: easeOut },
   }),
+  exit: { opacity: 0, y: -20, transition: { duration: 0.4, ease: easeOut } },
 };
 
 export const fadeIn: Variants = {
@@ -27,6 +28,7 @@ export const maskReveal: Variants = {
     clipPath: "inset(0 0 0% 0)",
     transition: { duration: 0.9, ease: easeOut },
   },
+  exit: { clipPath: "inset(100% 0 0 0)", transition: { duration: 0.5, ease: easeOut } },
 };
 
 /* Slim grow-line used under section labels */
@@ -36,4 +38,5 @@ export const ruleGrow: Variants = {
     scaleX: 1,
     transition: { duration: 0.8, ease: easeOut, delay: 0.2 },
   },
+  exit: { scaleX: 0, transition: { duration: 0.3, ease: easeOut } },
 };

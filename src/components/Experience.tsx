@@ -34,7 +34,7 @@ export default function ExperienceSection({ onOpenImage }: ExperienceProps) {
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.15 }}
               custom={i * 0.1}
               className="relative pl-16 md:pl-24"
             >

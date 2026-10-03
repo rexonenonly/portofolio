@@ -13,7 +13,7 @@ export default function Education() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           className="glass rounded-xl p-6 md:p-8 transition-colors group"
         >
           <div className="flex items-center gap-3 mb-6">
@@ -52,7 +52,7 @@ export default function Education() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           custom={0.1}
           className="glass rounded-xl p-6 md:p-8 transition-colors group flex flex-col justify-between"
         >

@@ -30,7 +30,7 @@ export default function Projects({ onOpenImage }: ProjectsProps) {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.15 }}
             custom={i * 0.08}
             className="group flex flex-col glass rounded-xl transition-colors overflow-hidden"
           >
