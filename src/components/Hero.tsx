@@ -113,8 +113,8 @@ export default function Hero() {
         >
           {([
             { icon: Mail, href: `mailto:${personalInfo.email}`, label: "Email" },
-            { icon: GithubIcon, href: "https://github.com", label: "GitHub" },
-            { icon: LinkedinIcon, href: "https://linkedin.com", label: "LinkedIn" },
+            { icon: GithubIcon, href: "https://github.com/rexonenonly", label: "GitHub" },
+            { icon: LinkedinIcon, href: "https://www.linkedin.com/in/rexaalvinando/", label: "LinkedIn" },
           ] as const).map(({ icon: Icon, href, label }) => (
             <a
               key={label}
