@@ -86,7 +86,7 @@ export default function About() {
                     whileInView="visible"
                     viewport={{ once: false, amount: 0.15 }}
                     custom={i * 0.08}
-                    className="glass rounded-xl p-3 text-center transition-colors hover:border-white/25 group cursor-default"
+                    className="glass-lite rounded-xl p-3 text-center transition-colors hover:border-white/25 group cursor-default"
                   >
                     <div className="mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white/60 group-hover:bg-white/20 group-hover:text-white transition-colors">
                       <Icon size={16} />

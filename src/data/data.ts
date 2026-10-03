@@ -213,7 +213,6 @@ export interface Certification {
   score?: string;
   logo: string;
   thumbnail: string;
-  pdfUrl?: string;
 }
 
 export const certifications: Certification[] = [
@@ -224,7 +223,6 @@ export const certifications: Certification[] = [
     score: "Score: 750",
     logo: "/assets/certs/logo-ets.png",
     thumbnail: "/assets/certs/toeic.jpg",
-    pdfUrl: "/assets/certs/toeic.pdf",
   },
   {
     name: "Database Programming with SQL",
@@ -232,7 +230,6 @@ export const certifications: Certification[] = [
     date: "Dec 2024",
     logo: "/assets/certs/logo-oracle.png",
     thumbnail: "/assets/certs/db-programming.jpg",
-    pdfUrl: "/assets/certs/db-programming.pdf",
   },
   {
     name: "Database Design",
@@ -240,7 +237,6 @@ export const certifications: Certification[] = [
     date: "Oct 2024",
     logo: "/assets/certs/logo-oracle.png",
     thumbnail: "/assets/certs/db-design.jpg",
-    pdfUrl: "/assets/certs/db-design.pdf",
   },
   {
     name: "MikroTik Certified Network Associate (MTCNA)",
@@ -248,7 +244,6 @@ export const certifications: Certification[] = [
     date: "Feb 2026",
     logo: "/assets/certs/logo-mikrotik.png",
     thumbnail: "/assets/certs/mtcna.jpg",
-    pdfUrl: "/assets/certs/mtcna.pdf",
   },
 ];
 

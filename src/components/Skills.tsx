@@ -22,7 +22,7 @@ export default function Skills() {
               whileInView="visible"
               viewport={{ once: false, amount: 0.15 }}
               custom={i * 0.06}
-              className="group glass rounded-xl p-6 transition-colors"
+              className="group glass-lite rounded-xl p-6 transition-colors"
             >
               {/* Category header */}
               <div className="flex items-center gap-3 mb-4">

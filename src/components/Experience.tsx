@@ -42,7 +42,7 @@ export default function ExperienceSection({ onOpenImage }: ExperienceProps) {
               <div className="absolute left-6 md:left-10 -translate-x-1/2 top-2 flex h-4 w-4 items-center justify-center rounded-full border-2 border-white/40 bg-[#0b1017]" />
 
               {/* Main Card */}
-              <div className="glass rounded-xl p-6 md:p-8 transition-colors group">
+              <div className="glass-lite rounded-xl p-6 md:p-8 transition-colors group">
                 {/* Badges */}
                 <div className="flex flex-wrap items-center gap-2 mb-3">
                   <span className="inline-flex items-center gap-1.5 glass-chip rounded-full px-3 py-1 text-xs font-semibold text-white/80">

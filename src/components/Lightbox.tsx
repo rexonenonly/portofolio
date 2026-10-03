@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Download } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface LightboxImage {
   src: string;
   alt: string;
   title?: string;
   subtitle?: string;
-  downloadUrl?: string;
 }
 
 interface LightboxProps {
@@ -75,19 +74,6 @@ export default function Lightbox({
           </div>
 
           <div className="flex items-center gap-2">
-            {currentImage.downloadUrl && (
-              <a
-                href={currentImage.downloadUrl}
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-medium text-white hover:bg-white hover:text-black transition-colors"
-                title="Download / View File"
-              >
-                <Download size={14} />
-                <span>Download File</span>
-              </a>
-            )}
             <button
               onClick={onClose}
               className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white hover:bg-white hover:text-black transition-colors"

@@ -14,7 +14,7 @@ export default function Education() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.15 }}
-          className="glass rounded-xl p-6 md:p-8 transition-colors group"
+          className="glass-lite rounded-xl p-6 md:p-8 transition-colors group"
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/10 text-white/65 group-hover:bg-white/20 group-hover:text-white transition-colors">

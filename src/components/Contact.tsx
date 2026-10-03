@@ -25,7 +25,7 @@ export default function Contact() {
           {contactChannels.map(({ icon: Icon, label, value, href }) => (
             <div
               key={label}
-              className="group relative glass rounded-xl p-5 transition-colors text-center"
+              className="group relative glass-lite rounded-xl p-5 transition-colors text-center"
             >
               <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white/60 group-hover:bg-white/20 group-hover:text-white transition-colors">
                 <Icon size={18} />

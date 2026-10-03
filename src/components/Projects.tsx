@@ -32,7 +32,7 @@ export default function Projects({ onOpenImage }: ProjectsProps) {
             whileInView="visible"
             viewport={{ once: false, amount: 0.15 }}
             custom={i * 0.08}
-            className="group flex flex-col glass rounded-xl transition-colors overflow-hidden"
+            className="group flex flex-col glass-lite rounded-xl transition-colors overflow-hidden"
           >
             <div className="p-6 md:p-7 space-y-4 flex-1">
               {/* Header */}
