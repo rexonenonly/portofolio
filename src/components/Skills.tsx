@@ -22,14 +22,14 @@ export default function Skills() {
               whileInView="visible"
               viewport={{ once: true }}
               custom={i * 0.06}
-              className="group rounded-xl border border-zinc-200 bg-white p-6 hover:border-zinc-900 transition-colors"
+              className="group glass rounded-xl p-6 transition-colors"
             >
               {/* Category header */}
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-100 text-zinc-800 group-hover:bg-zinc-900 group-hover:text-white transition-colors">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white/60 group-hover:bg-white/20 group-hover:text-white transition-colors">
                   <Icon size={18} />
                 </div>
-                <h3 className="text-sm font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
+                <h3 className="text-sm font-bold text-white group-hover:text-white/80 transition-colors">
                   {group.category}
                 </h3>
               </div>
@@ -39,7 +39,7 @@ export default function Skills() {
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:border-zinc-900 hover:text-zinc-900 transition-colors cursor-default"
+                    className="glass-chip rounded-lg px-3 py-1.5 text-xs font-semibold text-white/60 hover:text-white transition-colors cursor-default"
                   >
                     {item}
                   </span>

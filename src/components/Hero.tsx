@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, ChevronDown } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { personalInfo } from "../data/data";
 import { fadeUp } from "../utils/animations";
 
@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-white"
+      className="relative min-h-screen flex items-center justify-center px-6"
     >
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         {/* Status badge */}
@@ -28,12 +28,9 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-1.5 text-xs font-semibold text-zinc-700"
+          className="mb-6 inline-flex items-center gap-2 glass-chip rounded-full px-4 py-1.5 text-xs font-semibold text-white/85"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-zinc-900 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-zinc-900" />
-          </span>
+          <span className="h-2 w-2 rounded-full bg-emerald-400" />
           Open to Opportunities
         </motion.div>
 
@@ -43,10 +40,10 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={1}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight text-zinc-900"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight text-white"
         >
           Hi, I'm{" "}
-          <span className="text-zinc-800">{personalInfo.name}</span>
+          <span className="text-white/70">{personalInfo.name}</span>
         </motion.h1>
 
         {/* Role */}
@@ -55,7 +52,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={2}
-          className="mt-4 text-lg md:text-xl font-medium text-zinc-600"
+          className="mt-4 text-lg md:text-xl font-medium text-white/65"
         >
           {personalInfo.role}
         </motion.p>
@@ -66,7 +63,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={3}
-          className="mt-3 text-sm md:text-base text-zinc-500 max-w-lg mx-auto"
+          className="mt-3 text-sm md:text-base text-white/45 max-w-lg mx-auto"
         >
           {personalInfo.tagline}
         </motion.p>
@@ -77,9 +74,9 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={3.5}
-          className="mt-4 flex items-center justify-center gap-2 text-xs text-zinc-500"
+          className="mt-4 flex items-center justify-center gap-2 text-xs text-white/40"
         >
-          <MapPin size={14} className="text-zinc-600" />
+          <MapPin size={14} className="text-white/55" />
           {personalInfo.location}
         </motion.div>
 
@@ -93,14 +90,14 @@ export default function Hero() {
         >
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-2 rounded-lg bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-zinc-800 transition-colors"
+            className="group relative inline-flex items-center gap-2 rounded-lg glass-btn px-6 py-3 text-sm font-semibold text-white"
           >
             <Mail size={16} />
             Contact Me
           </a>
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-6 py-3 text-sm font-semibold text-zinc-700 hover:border-zinc-900 hover:bg-zinc-50 transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg glass-btn px-6 py-3 text-sm font-semibold text-white/85"
           >
             View Projects
           </a>
@@ -124,7 +121,7 @@ export default function Hero() {
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              className="group flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 hover:border-zinc-900 hover:text-zinc-900 hover:bg-zinc-50 transition-colors"
+              className="group flex h-10 w-10 items-center justify-center rounded-full glass-chip text-white/60 hover:text-white transition-colors"
               aria-label={label}
             >
               <Icon size={18} />
@@ -132,23 +129,6 @@ export default function Hero() {
           ))}
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.a
-        href="#about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-zinc-400 hover:text-zinc-900 transition-colors"
-        aria-label="Scroll down"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown size={24} />
-        </motion.div>
-      </motion.a>
     </section>
   );
 }

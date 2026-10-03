@@ -6,7 +6,7 @@ export const personalInfo = {
   email: "rexalvinando@gmail.com",
   phone: "+6287843926332",
   summary:
-    "Bridging business requirements and clean technical execution. System Analyst & Fullstack Developer with end-to-end SDLC experience — from requirements gathering and technical specs (BRD/FSD) to backend architecture and AI integration. Core stack: Laravel, JavaScript/Next.js, PostgreSQL, and REST APIs.",
+    "Bridging business requirements and clean technical execution. System Analyst & Fullstack Developer with end-to-end SDLC experience - from requirements gathering and technical specs (BRD/FSD) to backend architecture and AI integration. Core stack: Laravel, JavaScript/Next.js, PostgreSQL, and REST APIs.",
   tagline: "Clean code. Modern tech. Reliable systems.",
   profileImage: "/assets/profile.jpg",
 };
@@ -39,7 +39,7 @@ export const experiences: Experience[] = [
     title: "System Analyst & Fullstack Developer Intern",
     company: "PT. Apparel One Indonesia",
     type: "Internship",
-    period: "Jul 2025 — Dec 2025",
+    period: "Jul 2025 - Dec 2025",
     duration: "6 months",
     bullets: [
       "Built Guest Book & Appointment modules for X-Guard Visitor Management System, digitizing enterprise visitor tracking.",
@@ -56,7 +56,7 @@ export const experiences: Experience[] = [
     title: "Graphic Designer",
     company: "Tomcat Digital Printing",
     type: "Internship",
-    period: "Aug 2022 — Jan 2023",
+    period: "Aug 2022 - Jan 2023",
     duration: "6 months",
     bullets: [
       "Handled high-volume custom design requests under tight deadlines in a fast-paced print production environment.",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
   {
     title: "VISITA",
     subtitle: "AI-Powered Guest Management System",
-    period: "Feb 2026 — Jul 2026",
+    period: "Feb 2026 - Jul 2026",
     association: "Politeknik Negeri Semarang",
     description:
       "Face Recognition + AI Virtual Assistant for automated visitor registration, replacing paper logbooks.",
@@ -95,7 +95,7 @@ export const projects: Project[] = [
   {
     title: "X-Guard",
     subtitle: "Guestbook & Appointment Module",
-    period: "Jul 2025 — Dec 2025",
+    period: "Jul 2025 - Dec 2025",
     association: "PT. Apparel One Indonesia",
     description:
       "Digitized visitor operations across manufacturing facilities, eliminating paper-based bottlenecks.",
@@ -108,7 +108,7 @@ export const projects: Project[] = [
   {
     title: "Monitera",
     subtitle: "School Attendance Platform",
-    period: "Mar 2025 — Jun 2025",
+    period: "Mar 2025 - Jun 2025",
     description:
       "Face Recognition-based school attendance with streamlined check-ins and student point tracking.",
     tags: ["Laravel", "Face Recognition", "MySQL", "JavaScript"],
@@ -119,7 +119,7 @@ export const projects: Project[] = [
   {
     title: "The Last Knight",
     subtitle: "Action RPG Prototype",
-    period: "Apr 2025 — Jun 2025",
+    period: "Apr 2025 - Jun 2025",
     description:
       "Real-time combat RPG with enemy AI, responsive melee system, and character leveling progression.",
     tags: ["Unity", "C#", "NavMesh", "Game AI"],
@@ -132,7 +132,7 @@ export const projects: Project[] = [
   {
     title: "Hand Sign AI",
     subtitle: "Gesture Recognition System",
-    period: "Apr 2025 — Jun 2025",
+    period: "Apr 2025 - Jun 2025",
     description:
       "Real-time hand gesture recognition via camera for sign language identification and assistive communication.",
     tags: ["Python", "OpenCV", "TensorFlow", "Computer Vision"],
@@ -144,7 +144,7 @@ export const projects: Project[] = [
   {
     title: "MyHiking",
     subtitle: "Mountain Ticket Booking App",
-    period: "Oct 2024 — Jan 2025",
+    period: "Oct 2024 - Jan 2025",
     description:
       "Mountain trekking booking app with real-time quota, payment gateway, and QR ticket validation.",
     tags: ["PHP", "MySQL", "JavaScript", "QR Code", "Payment Gateway"],
@@ -196,7 +196,7 @@ export const education = {
   institution: "Politeknik Negeri Semarang",
   degree: "Associate Degree (D3) in Informatics Engineering",
   gpa: "3.77 / 4.00",
-  period: "Sep 2023 — Sep 2026",
+  period: "Sep 2023 - Sep 2026",
 };
 
 // ─── Languages ───────────────────────────────────────────────

@@ -137,7 +137,7 @@ export default function Lightbox({
                 {currentImage.title}
               </h3>
             )}
-            <p className="text-xs md:text-sm text-zinc-300 mt-1">
+            <p className="text-xs md:text-sm text-white/65 mt-1">
               {currentImage.alt || currentImage.subtitle}
             </p>
           </div>

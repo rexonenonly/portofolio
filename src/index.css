@@ -1,26 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
-/* ─── Tailwind Theme: High-end Minimalist Editorial (Light Mode) ────────── */
+/* ─── Tailwind Theme ─────────────────────────────────────── */
 @theme {
-  --font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-  /* Monochrome Surface & Text Palette */
-  --color-zinc-50: #fafafa;
-  --color-zinc-100: #f4f4f5;
-  --color-zinc-200: #e4e4e7;
-  --color-zinc-300: #d4d4d8;
-  --color-zinc-400: #a1a1aa;
-  --color-zinc-500: #71717a;
-  --color-zinc-600: #52525b;
-  --color-zinc-700: #3f3f46;
-  --color-zinc-800: #27272a;
-  --color-zinc-900: #18181b;
-  --color-zinc-950: #09090b;
 }
 
-/* ─── Base Layer ─────────────────────────────────────────── */
+/* ─── Base Layer: Dark Liquid Base ────────────────────────── */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -31,17 +18,87 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #ffffff;
-    color: #18181b;
+    background-color: #0a0d13;
+    color: #f4f6fa;
     overflow-x: hidden;
   }
 
+  /* Ambient liquid depth: desaturated steel/cyan caustics.
+     Subtle chromatic refraction behind glass, not neon. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(55% 45% at 18% 12%, rgba(56, 118, 205, 0.22), transparent 62%),
+      radial-gradient(48% 42% at 85% 10%, rgba(40, 165, 195, 0.16), transparent 64%),
+      radial-gradient(60% 52% at 80% 88%, rgba(96, 104, 168, 0.16), transparent 66%),
+      radial-gradient(42% 38% at 8% 80%, rgba(45, 92, 122, 0.14), transparent 60%);
+    animation: caustic-drift-bg 70s ease-in-out infinite alternate;
+  }
+
+  /* Animated luminous caustic wash: pure CSS, no JS.
+     The moving layer drifts on a 55s loop and desaturates slightly.
+     Disabled when user prefers reduced motion. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(45% 35% at 25% 18%, rgba(96, 150, 255, 0.16), transparent 55%),
+      radial-gradient(50% 40% at 78% 80%, rgba(64, 190, 220, 0.14), transparent 60%);
+    opacity: 0.85;
+    animation: caustic-drift 55s ease-in-out infinite alternate;
+  }
+
+  @keyframes caustic-drift {
+    0%   { transform: translate3d(-4%, -3%, 0) scale(1.08); filter: blur(42px); }
+    50%  { transform: translate3d(2%, 2%,  0) scale(1.22); filter: blur(58px); }
+    100% { transform: translate3d(5%, -4%, 0)  scale(1.14); filter: blur(48px); }
+  }
+
+  @keyframes caustic-drift-bg {
+    0%   { transform: translate3d(0%, 0%, 0) scale(1); }
+    50%  { transform: translate3d(1.5%, 2%, 0) scale(1.04); }
+    100% { transform: translate3d(-2%, -1.5%, 0) scale(1.02); }
+  }
+
+  @keyframes glass-flow {
+    0%   { background-position: 0% 20%; }
+    100% { background-position: 100% 80%; }
+  }
+  @keyframes glass-sheen {
+    0%   { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+  @keyframes nav-flow {
+    0%   { background-position: 50% 0%; }
+    100% { background-position: 50% 100%; }
+  }
+  @keyframes sheen-shift {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body::after,
+    body::before,
+    .glass,
+    .glass::before,
+    .glass-chip,
+    .glass-nav,
+    .glass-btn { animation: none; }
+  }
+
   ::selection {
-    background-color: #18181b;
+    background-color: rgba(130, 180, 255, 0.35);
     color: #ffffff;
   }
 
-  /* Sleek minimal scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -49,23 +106,126 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: #d4d4d8;
+    background: rgba(255, 255, 255, 0.18);
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #a1a1aa;
+    background: rgba(255, 255, 255, 0.3);
   }
 }
 
-/* ─── Minimalist Utility Classes ─────────────────────────── */
+/* ─── Liquid Glass Utilities ────────────────────────────────
+   Web approximation of liquid glass: frosted blur + layered
+   specular highlights + fine refractive border.
+   ponytail: static CSS, no JS refraction. Upgrade path: real
+   SVG displacement filter if caustic distortion is requested. */
 @layer utilities {
   .font-mono {
     font-family: var(--font-mono);
   }
 
-  .subtle-grid {
-    background-image: linear-gradient(to right, rgba(24, 24, 27, 0.04) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(24, 24, 27, 0.04) 1px, transparent 1px);
-    background-size: 32px 32px;
+  /* Primary glass surface (cards, panels) - white gradient with slow drift */
+  .glass {
+    position: relative;
+    isolation: isolate;
+    background: linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.03) 55%,
+      rgba(255, 255, 255, 0.07) 100%
+    );
+    background-size: 180% 180%;
+    animation: glass-flow 24s ease-in-out infinite alternate;
+    -webkit-backdrop-filter: blur(22px) saturate(1.6);
+    backdrop-filter: blur(22px) saturate(1.6);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+      0 24px 48px -24px rgba(3, 7, 18, 0.8);
+  }
+
+  /* Top-left specular sheen: the liquid refraction highlight */
+  .glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: radial-gradient(
+      130% 70% at 12% -10%,
+      rgba(255, 255, 255, 0.18),
+      transparent 46%
+    );
+    background-size: 200% 200%;
+    animation: glass-sheen 16s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  /* Small chip: tags, badges, pills */
+  .glass-chip {
+    background: linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.04) 100%
+    );
+    background-size: 180% 180%;
+    animation: glass-flow 28s ease-in-out infinite alternate;
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    backdrop-filter: blur(12px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  /* Frosted navigation bar */
+  .glass-nav {
+    background: linear-gradient(
+      180deg,
+      rgba(18, 24, 34, 0.72) 0%,
+      rgba(11, 16, 23, 0.55) 100%
+    );
+    background-size: 100% 200%;
+    animation: nav-flow 20s ease-in-out infinite alternate;
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    backdrop-filter: blur(18px) saturate(1.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  /* Glass button */
+  .glass-btn {
+    background: linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.14) 0%,
+      rgba(255, 255, 255, 0.06) 100%
+    );
+    background-size: 180% 180%;
+    animation: glass-flow 18s ease-in-out infinite alternate;
+    -webkit-backdrop-filter: blur(14px) saturate(1.5);
+    backdrop-filter: blur(14px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transition: background 0.25s, border-color 0.25s;
+  }
+
+  .glass-btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.32);
+  }
+
+  /* Solid-fill fallback for reduced-transparency users */
+  @media (prefers-reduced-transparency: reduce) {
+    .glass,
+    .glass-chip,
+    .glass-nav,
+    .glass-btn {
+      background: #151b26;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: none;
+    }
+    .glass::before {
+      display: none;
+    }
   }
 }

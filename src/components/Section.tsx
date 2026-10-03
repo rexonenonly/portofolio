@@ -27,19 +27,19 @@ export default function Section({ id, title, subtitle, children, className = "" 
             {subtitle && (
               <motion.p
                 variants={fadeUp}
-                className="text-xs font-medium tracking-widest uppercase text-zinc-500 mb-4"
+                className="text-xs font-medium tracking-widest uppercase text-white/45 mb-4"
               >
                 {subtitle}
               </motion.p>
             )}
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4"
+              className="text-3xl md:text-4xl font-bold text-white mb-4"
               variants={maskReveal}
             >
               {title}
             </motion.h2>
             <motion.span
-              className="block h-px w-12 bg-zinc-900 mx-auto"
+              className="block h-px w-12 bg-white/60 mx-auto"
               variants={ruleGrow}
             />
           </motion.div>

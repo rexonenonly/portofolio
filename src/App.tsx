@@ -69,7 +69,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-white text-zinc-900 font-sans antialiased selection:bg-black selection:text-white">
+    <div className="relative min-h-screen font-sans antialiased selection:bg-white/20 selection:text-white">
       <Navbar />
       <main>
         <Hero />

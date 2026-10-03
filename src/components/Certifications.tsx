@@ -14,7 +14,7 @@ export default function Certifications({ onOpenImage }: CertificationsProps) {
     if (!onOpenImage) return;
     const lightboxItems: LightboxImage[] = certifications.map((c) => ({
       src: c.thumbnail,
-      alt: `${c.name} — ${c.issuer}`,
+      alt: `${c.name} - ${c.issuer}`,
       title: c.name,
       subtitle: `${c.issuer} • ${c.date}${c.score ? ` • ${c.score}` : ""}`,
       downloadUrl: c.pdfUrl || c.thumbnail,
@@ -33,37 +33,37 @@ export default function Certifications({ onOpenImage }: CertificationsProps) {
             whileInView="visible"
             viewport={{ once: true }}
             custom={i * 0.06}
-            className="group relative flex flex-col justify-between rounded-xl border border-zinc-200 bg-white p-5 hover:border-zinc-900 transition-colors"
+            className="group relative flex flex-col justify-between glass rounded-xl p-5 transition-colors"
           >
             <div>
               {/* Issuer & Date */}
               <div className="flex items-center justify-between gap-3 mb-4">
                 <div className="flex items-center gap-2.5">
-                  <div className="h-9 w-9 overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50 p-1 flex items-center justify-center">
+                  <div className="h-9 w-9 overflow-hidden rounded-lg border border-white/10 bg-white/5 p-1 flex items-center justify-center">
                     <img src={cert.logo} alt={cert.issuer} className="max-h-full max-w-full object-contain" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-zinc-900">{cert.issuer}</p>
-                    <p className="text-[11px] text-zinc-500 flex items-center gap-1">
+                    <p className="text-xs font-bold text-white">{cert.issuer}</p>
+                    <p className="text-[11px] text-white/40 flex items-center gap-1">
                       <Calendar size={11} />
                       {cert.date}
                     </p>
                   </div>
                 </div>
                 {cert.score && (
-                  <span className="rounded-full bg-zinc-900 text-white px-2.5 py-0.5 text-[11px] font-bold shrink-0">
+                  <span className="rounded-full bg-white/15 text-white/80 px-2.5 py-0.5 text-[11px] font-bold shrink-0">
                     {cert.score}
                   </span>
                 )}
               </div>
 
               {/* Title */}
-              <h3 className="text-sm md:text-base font-bold text-zinc-900 line-clamp-2 min-h-[40px]">
+              <h3 className="text-sm md:text-base font-bold text-white line-clamp-2 min-h-[40px]">
                 {cert.name}
               </h3>
 
               {/* Thumbnail */}
-              <div className="mt-4 relative aspect-[4/3] overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50">
+              <div className="mt-4 relative aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-white/5">
                 <img
                   src={cert.thumbnail}
                   alt={cert.name}
@@ -73,9 +73,9 @@ export default function Certifications({ onOpenImage }: CertificationsProps) {
                 <button
                   type="button"
                   onClick={() => handleOpenCert(i)}
-                  className="absolute inset-0 bg-zinc-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-1.5 p-3 text-center cursor-pointer"
+                  className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-1.5 p-3 text-center cursor-pointer"
                 >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-zinc-900">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#0b1017]">
                     <ZoomIn size={16} />
                   </span>
                   <span className="text-xs font-medium text-white">View Document</span>
@@ -84,11 +84,11 @@ export default function Certifications({ onOpenImage }: CertificationsProps) {
             </div>
 
             {/* Bottom Actions */}
-            <div className="mt-4 pt-3 border-t border-zinc-100 flex items-center justify-between gap-2">
+            <div className="mt-4 pt-3 border-t border-white/8 flex items-center justify-between gap-2">
               <button
                 type="button"
                 onClick={() => handleOpenCert(i)}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-700 hover:text-zinc-900 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/65 hover:text-white transition-colors cursor-pointer"
               >
                 <FileText size={13} />
                 <span>View Certificate</span>
@@ -99,7 +99,7 @@ export default function Certifications({ onOpenImage }: CertificationsProps) {
                   download
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-100 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 hover:border-zinc-900 hover:bg-zinc-900 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1 rounded-lg glass-chip px-2.5 py-1 text-[11px] font-semibold text-white/55 hover:bg-white/15 hover:text-white transition-colors"
                   title="Download PDF"
                 >
                   <Download size={11} />
